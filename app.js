@@ -10,6 +10,12 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+const Sequelize = require('sequelize');
+
+var sequelize = new Sequelize('workouts', null, null, {
+    dialect: "sqlite",
+    storage: './test.sqlite',
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
