@@ -5,9 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
+var hbs = require('hbs');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var workouts = require('./routes/workouts');
 
 var app = express();
 const Sequelize = require('sequelize');
@@ -19,6 +20,7 @@ var sequelize = new Sequelize('workouts', null, null, {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
@@ -36,7 +38,7 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/workouts', workouts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

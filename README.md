@@ -4,3 +4,5 @@
 - https://stackoverflow.com/questions/12487416/how-to-organize-a-node-app-that-uses-sequelize
 - https://github.com/sequelize/express-example
 - http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
+- http://docs.sequelizejs.com/manual/tutorial/associations.html#hasone
+- http://docs.sequelizejs.com/variable/index.html
