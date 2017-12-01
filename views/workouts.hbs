@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Reps</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Unit</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  {{#each workouts as |workout|}}
+    {{>workout}}
+  {{/each}}
+</table>
