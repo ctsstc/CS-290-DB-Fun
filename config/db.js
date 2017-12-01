@@ -3,7 +3,7 @@ module.exports = {
   development: {
     database: "workouts",
     dialect: "sqlite",
-    storage: "./exercise.dev.sqlite"
+    storage: "./db/exercise.dev.sqlite"
   }
 };
 
