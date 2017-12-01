@@ -6,7 +6,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   Workout.findAll().then((workouts) => {
-    
+    res.render('workouts', workouts);
   });
 });
 
