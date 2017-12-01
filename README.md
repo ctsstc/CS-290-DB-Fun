@@ -6,3 +6,9 @@
 - http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
 - http://docs.sequelizejs.com/manual/tutorial/associations.html#hasone
 - http://docs.sequelizejs.com/variable/index.html
+
+#### Icons
+- https://getbootstrap.com/docs/4.0/extend/icons/
+- http://glyph.smarticons.co/
+- https://material.io/icons/#ic_delete_forever
+- https://svgontheweb.com/#css
