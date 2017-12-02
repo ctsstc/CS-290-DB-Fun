@@ -1,0 +1,9 @@
+{
+  "apps" : [{
+    "name": "Main",
+    "script": "./bin/www",
+    "env": {
+      "PORT": 3000
+    }
+  }]
+}
