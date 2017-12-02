@@ -6,6 +6,11 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   Workout.findAll({raw: true}).then((workouts) => {
+    workouts = workouts.map(workout => {
+      // remove timestamp
+      workout.date = workout.date.slice(0, 10);
+      return workout;
+    });
     res.render('workouts', {workouts});
   });
 });

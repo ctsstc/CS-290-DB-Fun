@@ -87,6 +87,15 @@ class Workouts {
     this.editUnit.val(workoutData.unit);
   }
 
+  updateWorkoutUI(workout) {
+    let workoutUI = this.getWorkout(workout.id);
+    $('.date', workoutUI).text(workout.date);
+    $('.reps', workoutUI).text(workout.reps);
+    $('.name', workoutUI).text(workout.name);
+    $('.weight', workoutUI).text(workout.weight);
+    $('.unit', workoutUI).text(workout.unit);
+  }
+
   save() {
     let workout = this.serializeEdit();
     let method = workout.id == 'new' ? 'POST' : 'PUT';
@@ -103,6 +112,10 @@ class Workouts {
         if (workout.id == undefined) {
           this.addWorkout(workout);
         }
+        else {
+          this.updateWorkoutUI(workout);
+        }
+        this.resetEditUI();
       }
     });
   }
@@ -150,8 +163,6 @@ class Workouts {
     });
 
     this.workouts.parent().append(workoutUI);
-
-    this.resetUI();
   }
 
   getWorkout(id) {
@@ -173,7 +184,7 @@ class Workouts {
     window.scrollTo(0, 0);
   }
 
-  resetUI() {
+  resetEditUI() {
     this.editAction.text('New Workout');
     // reset all inputs
     this.editInputs.val('');
