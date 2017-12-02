@@ -2,7 +2,7 @@
   <div class="col">
     <h1 class="center">I Work Ouuut</h1>
   </div>
-</div> 
+</div>
 
 <div class="row">
   <div class="col">
@@ -26,10 +26,11 @@
         <th>Delete</th>
       </thead>
 
-      {{#each workouts as |workout|}}
-        {{> workout workout=workout}} 
-      {{/each}}
-      
+      <tbody>
+        {{#each workouts as |workout|}}
+          {{> workout workout=workout}}
+        {{/each}}
+      </tbody>
     </table>
   </div>
 </div>
