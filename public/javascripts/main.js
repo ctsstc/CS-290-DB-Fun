@@ -88,20 +88,20 @@ class Workouts {
   }
 
   save() {
-    let datas = this.serializeEdit();
-    let method = datas.id == 'new' ? 'POST' : 'PUT';
+    let workout = this.serializeEdit();
+    let method = workout.id == 'new' ? 'POST' : 'PUT';
 
-    if (datas.id == 'new') {
-      delete datas.id;
+    if (workout.id == 'new') {
+      delete workout.id;
     }
 
     $.ajax({
       method,
       contentType: 'application/json', 
-      data: JSON.stringify(datas),
+      data: JSON.stringify(workout),
       success: () => {
-        if (datas.id == undefined) {
-          this.addWorkout(datas);
+        if (workout.id == undefined) {
+          this.addWorkout(workout);
         }
       }
     });
