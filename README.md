@@ -6,6 +6,7 @@
 - http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
 - http://docs.sequelizejs.com/manual/tutorial/associations.html#hasone
 - http://docs.sequelizejs.com/variable/index.html
+- https://formatjs.io/handlebars/#formatDate
 
 #### Icons
 - https://getbootstrap.com/docs/4.0/extend/icons/

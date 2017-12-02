@@ -6,7 +6,6 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   Workout.findAll({raw: true}).then((workouts) => {
-    console.log(workouts);
     res.render('workouts', {workouts});
   });
 });
@@ -26,8 +25,8 @@ router.put('/', (req, res) => {
   });
 });
 
-router.delete('/', () => {
-  let id = req.query.id;
+router.delete('/', (req, res) => {
+  let id = req.body.id;
   Workout.findById(id).then((workout) => {
     return workout.destroy();
   }).then(() => {

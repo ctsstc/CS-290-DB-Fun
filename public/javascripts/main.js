@@ -26,10 +26,22 @@ class Workouts {
   }
 
   events() {
+    this.bindEditSave();
+    this.bindWorkoutsDelete();
+  }
+
+  bindEditSave() {
     let workout = this;
     this.editSave.click(function(e) {
       e.preventDefault();
       workout.save();
+    });
+  }
+
+  bindWorkoutsDelete() {
+    let workout = this;
+    $('.delete', this.workouts).click(function() {
+      workout.delete(this);
     });
   }
 
@@ -56,9 +68,26 @@ class Workouts {
       method,
       contentType: 'application/json', 
       data: JSON.stringify(datas)
-    })
+    });
   }
 
+  delete(el) {
+    let workout = $(el);
+    let id = workout.data('id');
+
+    $.ajax({
+      method: 'delete',
+      contentType: 'application/json',
+      data: JSON.stringify({id}),
+      success: () => {
+        this.deleteWorkout(id);
+      }
+    });
+  }
+
+  deleteWorkout(id) {
+    $(`#workout-${id}`).remove();
+  }
 
 
 }

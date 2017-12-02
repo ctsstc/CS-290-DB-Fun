@@ -1,16 +1,16 @@
-<tr class="workout">
-  <td>{{workout.date}}</td>
-  <td>{{workout.reps}}</td>
-  <td>{{workout.name}}</td>
-  <td>{{workout.weight}}</td>
-  <td>{{workout.unit}}</td>
+<tr id="workout-{{workout.id}}" class="workout">
+  <td class="date">{{workout.date}}</td>
+  <td class="reps">{{workout.reps}}</td>
+  <td class="name">{{workout.name}}</td>
+  <td class="weight">{{workout.weight}}</td>
+  <td class="unit">{{workout.unit}}</td>
   <td>
-    <button type="button" class="btn btn-secondary" data-id="{{workout.id}}" data-action="edit">
+    <button type="button" class="edit btn btn-success" data-id="{{workout.id}}" data-action="edit" data-id="{{workout.id}}">
       <img src="/images/svg/ic_edit_black_24px.svg">
     </button>
   </td>
   <td>
-    <button type="button" class="btn btn-danger" data-id="{{workout.id}}" data-action="delete">
+    <button type="button" class="delete btn btn-danger" data-id="{{workout.id}}" data-action="delete" data-id="{{workout.id}}">
       <img src="/images/svg/ic_delete_forever_black_24px.svg">
     </button>
   </td>

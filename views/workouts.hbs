@@ -26,7 +26,9 @@
         <th>Delete</th>
       </thead>
 
-      {{#each workouts as |workout|}} {{> workout}} {{/each}}
+      {{#each workouts as |workout|}}
+        {{> workout workout=workout}} 
+      {{/each}}
       
     </table>
   </div>
