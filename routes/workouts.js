@@ -5,13 +5,14 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  Workout.findAll().then((workouts) => {
-    res.render('workouts', workouts);
+  Workout.findAll({raw: true}).then((workouts) => {
+    console.log(workouts);
+    res.render('workouts', {workouts});
   });
 });
 
 router.post('/', (req, res) => {
-  Workout.create(req.query).then(() => {
+  Workout.create(req.body).then(() => {
     res.sendStatus(200);
   });
 });

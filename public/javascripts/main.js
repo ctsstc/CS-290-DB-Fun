@@ -46,7 +46,6 @@ class Workouts {
 
   save() {
     let datas = this.workoutData(this.editWorkout);
-    debugger
     let method = datas.id == 'new' ? 'POST' : 'PUT';
 
     if (datas.id == 'new') {
@@ -54,7 +53,8 @@ class Workouts {
     }
 
     $.ajax({
-      method, 
+      method,
+      contentType: 'application/json', 
       data: JSON.stringify(datas)
     })
   }
