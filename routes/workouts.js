@@ -16,8 +16,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req, res) => {
-  Workout.create(req.body).then(() => {
-    res.sendStatus(200);
+  Workout.create(req.body).then((workout) => {
+    res.json(workout);
   });
 });
 

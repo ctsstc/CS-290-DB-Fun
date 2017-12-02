@@ -108,8 +108,9 @@ class Workouts {
       method,
       contentType: 'application/json', 
       data: JSON.stringify(workout),
-      success: () => {
+      success: (data) => {
         if (workout.id == undefined) {
+          workout.id = data.id;
           this.addWorkout(workout);
         }
         else {
