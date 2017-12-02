@@ -18,6 +18,7 @@ router.post('/', (req, res) => {
 
 router.put('/', (req, res) => {
   let id = req.body.id;
+  console.log("ID", id, "BODY", req.body);
   Workout.findById(id).then((workout) => {
     return workout.update(req.body);
   }).then(() => {

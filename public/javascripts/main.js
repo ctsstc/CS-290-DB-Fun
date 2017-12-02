@@ -55,7 +55,19 @@ class Workouts {
     });
   }
 
-  serialize(el) {
+  serializeEdit() {
+
+    return {
+      id: this.editId.val(),
+      date: this.editDate.val(),
+      reps: this.editReps.val(),
+      name: this.editName.val(),
+      weight: this.editWeight.val(),
+      unit: this.editUnit.val()
+    }
+  }
+
+  serializeWorkout(el) {
     return {
       id: $('.edit', el).data('id'),
       date: $('.date', el).text(),
@@ -76,7 +88,7 @@ class Workouts {
   }
 
   save() {
-    let datas = this.serialize(this.editWorkout);
+    let datas = this.serializeEdit();
     let method = datas.id == 'new' ? 'POST' : 'PUT';
 
     if (datas.id == 'new') {
@@ -156,7 +168,7 @@ class Workouts {
   populateEditUI(id) {
     this.editAction.text('Edit Workout');
     let workout = this.getWorkout(id);
-    let data = this.serialize(workout);
+    let data = this.serializeWorkout(workout);
     this.deserialize(data);
     window.scrollTo(0, 0);
   }
@@ -165,6 +177,7 @@ class Workouts {
     this.editAction.text('New Workout');
     // reset all inputs
     this.editInputs.val('');
+    this.editId.val('new');
     this.editUnit.val('lbs'); // dirty hard code for now, could find the first and set it to that
   }
 
