@@ -14,6 +14,7 @@ class Workouts {
   bindUI() {
     this.editWorkout = $('.edit-workout').first();
     this.editAction = $('.action', this.editWorkout);
+    this.editId = $('.id', this.editWorkout);
     this.editDate = $('.date', this.editWorkout);
     this.editReps = $('.reps', this.editWorkout);
     this.editName = $('.name', this.editWorkout);
@@ -25,9 +26,39 @@ class Workouts {
   }
 
   events() {
+    let workout = this;
     this.editSave.click(function(e) {
       e.preventDefault();
+      workout.save();
     });
   }
+
+  workoutData(el) {
+    return {
+      id: $('.id', el).val(),
+      date: $('.date', el).val(),
+      reps: $('.reps', el).val(),
+      name: $('.name', el).val(),
+      weight: $('.weight', el).val(),
+      unit: $('.unit', el).val()
+    }
+  }
+
+  save() {
+    let datas = this.workoutData(this.editWorkout);
+    debugger
+    let method = datas.id == 'new' ? 'POST' : 'PUT';
+
+    if (datas.id == 'new') {
+      delete datas.id;
+    }
+
+    $.ajax({
+      method, 
+      data: JSON.stringify(datas)
+    })
+  }
+
+
 
 }
