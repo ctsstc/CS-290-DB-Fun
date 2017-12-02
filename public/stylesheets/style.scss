@@ -1,0 +1,23 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.row {
+  margin-bottom: 40px;
+}
+
+.edit-workout {
+  .reps, .weight {
+    width: 80px;
+  }
+}

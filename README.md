@@ -12,3 +12,6 @@
 - http://glyph.smarticons.co/
 - https://material.io/icons/#ic_delete_forever
 - https://svgontheweb.com/#css
+
+### Tables
+- https://getbootstrap.com/docs/4.0/content/tables/

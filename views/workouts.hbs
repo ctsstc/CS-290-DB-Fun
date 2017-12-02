@@ -1,16 +1,33 @@
-<h1>I Work Ouuut</h1>
+<div class="row">
+  <div class="col">
+    <h1 class="center">I Work Ouuut</h1>
+  </div>
+</div> 
 
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Reps</th>
-    <th>Name</th>
-    <th>Weight</th>
-    <th>Unit</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-  {{#each workouts as |workout|}}
-    {{> workout}}
-  {{/each}}
-</table>
+<div class="row">
+  <div class="col">
+    {{> editworkout}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+
+    <h2>Workouts - Would ya just look at it! Look at this, look at that!</h2>
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <th>Date</th>
+        <th>Reps</th>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Unit</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+
+      {{#each workouts as |workout|}} {{> workout}} {{/each}}
+      
+    </table>
+  </div>
+</div>
