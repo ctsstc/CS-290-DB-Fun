@@ -51,19 +51,28 @@ class Workouts {
   bindEditWorkout() {
     let workout = this;
     $('.edit', this.workouts).click(function() {
-      workout.editWorkout(this);
+      workout.editWorkoutUI(this);
     });
   }
 
   serialize(el) {
     return {
-      id: $('.id', el).val(),
-      date: $('.date', el).val(),
-      reps: $('.reps', el).val(),
-      name: $('.name', el).val(),
-      weight: $('.weight', el).val(),
-      unit: $('.unit', el).val()
+      id: $('.edit', el).data('id'),
+      date: $('.date', el).text(),
+      reps: $('.reps', el).text(),
+      name: $('.name', el).text(),
+      weight: $('.weight', el).text(),
+      unit: $('.unit', el).text()
     }
+  }
+
+  deserialize(workoutData) {
+    this.editId.val(workoutData.id);
+    this.editDate.val(workoutData.date.slice(0,10));
+    this.editReps.val(workoutData.reps);
+    this.editName.val(workoutData.name);
+    this.editWeight.val(workoutData.weight);
+    this.editUnit.val(workoutData.unit);
   }
 
   save() {
@@ -121,7 +130,7 @@ class Workouts {
 
     workout = this;
     $('.edit', workoutUI).click(function() {
-      workout.editWorkout(this);
+      workout.editWorkoutUI(this);
     });
 
     $('.delete', workoutUI).click(function() {
@@ -137,23 +146,11 @@ class Workouts {
     return $(`#workout-${id}`);
   }
 
-  editWorkout(id) {
+  editWorkoutUI(el) {
+    let id = $(el).data('id');
     let workout = this.getWorkout(id);
-
     // Update our Form
     this.populateEditUI(id);
-
-    // Cleanup UI
-    this.resetUI();
-  }
-
-  deserialize(workoutData) {
-    this.editId.val(workoutData.id);
-    this.editDate.val(workoutData.date);
-    this.editReps.val(workoutData.reps);
-    this.editName.val(workoutData.name);
-    this.editWeight.val(workoutData.weight);
-    this.editUnit.val(workoutData.unit);
   }
 
   populateEditUI(id) {
@@ -161,6 +158,7 @@ class Workouts {
     let workout = this.getWorkout(id);
     let data = this.serialize(workout);
     this.deserialize(data);
+    window.scrollTo(0, 0);
   }
 
   resetUI() {
