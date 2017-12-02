@@ -24,8 +24,8 @@ class Workouts {
     this.editUnit = $('.unit', this.editWorkout);
     this.editSave = $('.save', this.editWorkout)
 
-    this.workoutTable = $('table .workout');
-    this.workouts = $('table tbody');
+    this.workoutTable = $('table tbody');
+    this.workouts = $('table .workout');
   }
 
   events() {
