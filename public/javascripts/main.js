@@ -125,7 +125,7 @@ class Workouts {
     });
 
     $('.delete', workoutUI).click(function() {
-      workout.deleteWorkout(this);
+      workout.deleteWorkout($(this).data('id'));
     });
 
     this.workouts.parent().append(workoutUI);
