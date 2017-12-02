@@ -5,6 +5,9 @@ body {
 a {
   color: #00B7FF; }
 
+button {
+  cursor: pointer; }
+
 .center {
   text-align: center;
   margin: auto; }

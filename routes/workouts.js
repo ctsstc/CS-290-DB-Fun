@@ -10,4 +10,28 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.post('/', (req, res) => {
+  Workout.create(req.query).then(() => {
+    res.sendStatus(200);
+  });
+});
+
+router.put('/', (req, res) => {
+  let id = req.query.id;
+  Workout.findById(id).then((workout) => {
+    return workout.update(req.query);
+  }).then(() => {
+    res.sendStatus(200);
+  });
+});
+
+router.delete('/', () => {
+  let id = req.query.id;
+  Workout.findById(id).then((workout) => {
+    return workout.destroy();
+  }).then(() => {
+    res.sendStatus(200);
+  });
+});
+
 module.exports = router;

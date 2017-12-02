@@ -12,7 +12,7 @@ class Workouts {
   }
 
   bindUI() {
-    this.editWorkout = $('#edit-workout').first();
+    this.editWorkout = $('.edit-workout').first();
     this.editAction = $('.action', this.editWorkout);
     this.editDate = $('.date', this.editWorkout);
     this.editReps = $('.reps', this.editWorkout);
