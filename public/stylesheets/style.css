@@ -18,4 +18,7 @@ button {
 .edit-workout .reps, .edit-workout .weight {
   width: 80px; }
 
+.workout button {
+  font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map */
