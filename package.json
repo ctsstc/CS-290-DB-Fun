@@ -6,15 +6,15 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "better-sqlite3": "^5.4.0",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
+    "debug": "^4.1.1",
     "express": "^4.16.4",
     "hbs": "~4.0.1",
     "morgan": "^1.9.1",
-    "node-sass-middleware": "0.9.8",
-    "sequelize": "^4.42.0",
-    "serve-favicon": "~2.4.5"
+    "node-sass-middleware": "^0.11.0",
+    "sequelize": "^5.0.0-beta.16",
+    "serve-favicon": "^2.5.0",
+    "sqlite3": "^4.0.6"
   }
 }
